@@ -9,11 +9,11 @@
  */
 size_t _strlen(const char *s)
 {
-    size_t length = 0;
+	size_t length = 0;
 
-    while (s[length] != '\0')
-        length++;
-    return length;
+	while (s[length] != '\0')
+		length++;
+	return (length);
 }
 
 /**
@@ -24,15 +24,15 @@ size_t _strlen(const char *s)
  */
 char *_strcat(char *dest, const char *src)
 {
-    size_t dest_len = _strlen(dest);
-    size_t i;
+	size_t dest_len = _strlen(dest);
+	size_t i;
 
-    for (i = 0; src[i] != '\0'; i++)
-    {
-        dest[dest_len + i] = src[i];
-    }
-    dest[dest_len + i] = '\0';
-    return dest;
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[dest_len + i] = src[i];
+	}
+	dest[dest_len + i] = '\0';
+	return (dest);
 }
 
 /**
@@ -43,12 +43,12 @@ char *_strcat(char *dest, const char *src)
  */
 char *_strcpy(char *dest, const char *src)
 {
-    size_t i;
+	size_t i;
 
-    for (i = 0; src[i] != '\0'; i++)
-    {
-        dest[i] = src[i];
-    }
-    dest[i] = '\0';
-    return dest;
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[i] = src[i];
+	}
+	dest[i] = '\0';
+	return (dest);
 }

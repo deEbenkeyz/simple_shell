@@ -7,7 +7,7 @@
  */
 int _putchar(char c)
 {
-    return write(1, &c, 1);
+	return (write(1, &c, 1));
 }
 
 /**
@@ -17,16 +17,16 @@ int _putchar(char c)
  */
 int _print_data(const char *str)
 {
-    int count = 0;
+	int count = 0;
 
-    /* loop through the characters in the string and print them */
-    while (*str != '\0')
-    {
-        _putchar(*str++);
-        count++;
-    }
+	/* loop through the characters in the string and print them */
+	while (*str != '\0')
+	{
+		_putchar(*str++);
+		count++;
+	}
 
-    return count;
+	return (count);
 }
 
 /**
@@ -38,23 +38,23 @@ int _print_data(const char *str)
  */
 int _print_d_notfound(int count, char **args, char **argv)
 {
-    int argslen = strlen(args[0]), argvlen = strlen(argv[0]);
-    char error[] = ": not found\n";
-    char num = count + '0';
-    
-    /* Calculate the size needed for the message */
-    size_t message_size = strlen(argv[0]) + 10 + argslen + argvlen;
+	int argslen = strlen(args[0]), argvlen = strlen(argv[0]);
+	char error[] = ": not found\n";
+	char num = count + '0';
 
-    char *message = malloc(message_size);
+	/* Calculate the size needed for the message */
+	size_t message_size = strlen(argv[0]) + 10 + argslen + argvlen;
 
-    if (message == NULL)
-        return -1;
+	char *message = malloc(message_size);
 
-    snprintf(message, message_size, "%s: %c: %s%s", argv[0], num, args[0], error);
+	if (message == NULL)
+		return (-1);
 
-    write(2, message, _strlen(message));
+	snprintf(message, message_size, "%s: %c: %s%s", argv[0], num, args[0], error);
 
-    free(message);
+	write(2, message, _strlen(message));
 
-    return 0;
+	free(message);
+
+	return (0);
 }

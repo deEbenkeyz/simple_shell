@@ -10,25 +10,25 @@
  */
 char *_strdup(const char *str)
 {
-    char *dup;
-    size_t len = 0;
+	char *dup;
+	size_t len = 0;
 
-    if (str == NULL)
-        return NULL;
+	if (str == NULL)
+		return (NULL);
 
-    /* Calculate the size of the string */
-    len = _strlen(str);
+	/* Calculate the size of the string */
+	len = _strlen(str);
 
-    /* Allocate memory for the duplicate, including the null terminator */
-    dup = malloc(sizeof(char) * (len + 1));
+	/* Allocate memory for the duplicate, including the null terminator */
+	dup = malloc(sizeof(char) * (len + 1));
 
-    /* Check if memory was allocated */
-    if (dup == NULL)
-        return NULL;
+	/* Check if memory was allocated */
+	if (dup == NULL)
+		return (NULL);
 
-    /* Copy the string */
-    _strcpy(dup, str);
-    return dup;
+	/* Copy the string */
+	_strcpy(dup, str);
+	return (dup);
 }
 
 /**
@@ -40,15 +40,15 @@ char *_strdup(const char *str)
  */
 int _strncmp(const char *s1, const char *s2, size_t n)
 {
-    size_t i;
+	size_t i;
 
-    for (i = 0; i < n; i++)
-    {
-        /* compare the characters */
-        if (s1[i] != s2[i])
-            return s1[i] - s2[i];
-    }
-    return 0;
+	for (i = 0; i < n; i++)
+	{
+		/* compare the characters */
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+	}
+	return (0);
 }
 
 /**
@@ -59,12 +59,12 @@ int _strncmp(const char *s1, const char *s2, size_t n)
  */
 int _strcmp(char *s1, char *s2)
 {
-    int i;
+	int i;
 
-    for (i = 0; s1[i] != '\0' || s2[i] != '\0'; i++)
-    {
-        if (s1[i] != s2[i])
-            return s1[i] - s2[i];
-    }
-    return 0;
+	for (i = 0; s1[i] != '\0' || s2[i] != '\0'; i++)
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+	}
+	return (0);
 }
